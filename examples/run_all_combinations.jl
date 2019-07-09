@@ -2,7 +2,7 @@
 # Load libraries
 
 using PyPlot
-using JFSM
+using FSM
 using DataFrames
 
 # Load data

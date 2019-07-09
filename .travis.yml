@@ -10,8 +10,8 @@ before_install:
   - sudo apt-get install gfortran -y  
 script:
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-  - julia -e 'Pkg.clone(pwd()); Pkg.build("JFSM"); Pkg.test("JFSM"; coverage=true)'
+  - julia -e 'Pkg.clone(pwd()); Pkg.build("FSM"); Pkg.test("FSM"; coverage=true)'
 after_success:
-  - julia -e 'cd(Pkg.dir("JFSM")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
+  - julia -e 'cd(Pkg.dir("FSM")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
   # push coverage results to Codecov
-#  - julia -e 'cd(Pkg.dir("JFSM")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
+#  - julia -e 'cd(Pkg.dir("FSM")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'

@@ -1,7 +1,7 @@
 
 # Load packages
 
-using JFSM
+using FSM
 using PyPlot
 using Distributions
 using ProgressMeter

@@ -1,19 +1,19 @@
-# JFSM
+# FSM
 
-[![Build Status](https://travis-ci.org/jmgnve/JFSM.jl.svg?branch=master)](https://travis-ci.org/jmgnve/JFSM.jl)
+[![Build Status](https://travis-ci.org/jmgnve/FSM.jl.svg?branch=master)](https://travis-ci.org/jmgnve/FSM.jl)
 
-[![Coverage Status](https://coveralls.io/repos/github/jmgnve/JFSM.jl/badge.svg?branch=master)](https://coveralls.io/github/jmgnve/JFSM.jl?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/jmgnve/FSM.jl/badge.svg?branch=master)](https://coveralls.io/github/jmgnve/FSM.jl?branch=master)
 
 Julia wrapper for the Factorial Snow Model (original code available on this [homepage](https://github.com/RichardEssery/FSM)). For installing the package, run the following code:
 
 ```julia
-Pkg.clone("https://github.com/jmgnve/JFSM.jl")
+Pkg.clone("https://github.com/jmgnve/FSM.jl")
 ```
 
 The example below runs one model combination and plots the results (requires the PyPlot.jl and Plots.jl packages).
 
 ```julia
-using JFSM
+using FSM
 using PyPlot
 
 am = 0;
@@ -22,7 +22,7 @@ dm = 0;
 em = 0;
 hm = 0;
 
-metdata = readdlm(joinpath(Pkg.dir("JFSM"), "data\\met_CdP_0506.txt"), Float32);
+metdata = readdlm(joinpath(Pkg.dir("FSM"), "data\\met_CdP_0506.txt"), Float32);
 
 md = FsmType(am, cm, dm, em, hm);
 
@@ -35,7 +35,7 @@ plot(hs)
 The example folder contains code for running all model combinations and also a simple particle filter implementation:
 
 ```julia
-cd(joinpath(Pkg.dir("JFSM"), "examples"))
+cd(joinpath(Pkg.dir("FSM"), "examples"))
 
 include("run_all_combinations.jl")
 

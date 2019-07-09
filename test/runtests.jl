@@ -1,4 +1,4 @@
-using JFSM
+using FSM
 using Base.Test
 
 # Load driving data
